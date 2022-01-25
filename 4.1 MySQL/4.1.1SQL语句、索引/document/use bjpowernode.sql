@@ -1,0 +1,99 @@
+-- 使用数据库
+use bjpowernode;
+-- 
+-- 查看当前数据库的表
+-- show tables;
+-- 
+-- 查看表(这种形式不推荐)
+-- select * from EMP;
+-- select * from salgrade;
+-- select *from dept;
+-- 
+-- 查看表结构
+-- desc salgrade;
+-- 
+-- 查看版本号
+-- select version();
+-- 
+-- 查看当前使用数据库
+-- select database();
+-- 
+-- 查询字段
+-- select LOSAL,GRADE from salgrade;
+-- 
+-- 给字段起别名
+-- select DEPTNO,
+--     DNAME deptname
+-- from dept;
+-- 
+-- 条件查询
+-- 不等于 !=
+-- select EMPNO,
+--     ENAME
+-- from EMP
+-- where sal = 800
+-- select EMPNO,
+--     ENAME
+-- from EMP
+-- where sal != 800;
+-- select EMPNO,
+--     ENAME,
+--     sal
+-- from EMP
+-- where sal <= 3000;
+-- 
+-- 使用between...and..
+-- select EMPNO,
+--     ENAME,
+--     SAL
+-- from EMP
+-- where sal BETWEEN 800 AND 3000;
+-- 
+-- 查询补助不为NULL
+-- select EMPNO,
+--     ENAME,
+--     SAL,
+--     COMM
+-- from EMP
+-- where COMM is not NULL;
+-- 
+-- 查询NULL需要使用is,字符串还是用=
+-- select EMPNO,
+--     ENAME,
+--     SAL,
+--     COMM
+-- from EMP
+-- where sal in(800, 3000, 5000);
+-- 
+-- select ename,
+--     sal,
+--     COMM,
+--     EMPNO
+-- from emp
+-- where ename like '%o%';
+-- 
+-- 找出名字以T结尾的？
+--     select ename from emp where ename like '%T';
+-- 
+-- 找出名字以K开始的？
+--     select ename from emp where ename like 'K%';
+-- 
+-- 找出第二个字每是A的？
+--     select ename from emp where ename like '_A%';
+-- 
+-- 找出第三个字母是R的？
+-- select ename
+-- from emp
+-- where ename like '__R%';
+-- 
+-- 排序，默认是升序！！
+select ename,
+    sal
+from emp
+order by sal;
+-- 
+-- 指定降序：
+-- select ename,
+--     sal
+-- from emp
+-- order by sal desc;
