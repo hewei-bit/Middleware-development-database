@@ -9,7 +9,7 @@ mysql day02课堂笔记
 	| job       |
 	+-----------+
 	| CLERK     |
-	| SALESMAN  |
+	| SALESMAN  |       
 	| MANAGER   |
 	| ANALYST   |
 	| PRESIDENT |
@@ -1062,10 +1062,10 @@ union在使用的时候有注意事项吗？
 	t_movie 电影表（专门存储电影信息的）
 
 	编号			名字				故事情节					上映日期				时长				海报					类型
-	no(bigint)	name(varchar)	history(clob)		playtime(date)		time(double)	image(blob)			type(char)
+	no(bigint)	name(varchar)	      history(clob)		       playtime(date)		    time(double)	image(blob)			type(char)
 	------------------------------------------------------------------------------------------------------------------
-	10000			哪吒				...........			2019-10-11			2.5				....					'1'
-	10001			林正英之娘娘   ...........			2019-11-11			1.5				....					'2'
+	10000			哪吒				...........			    2019-10-11			   2.5				....					'1'
+	10001			林正英之娘娘      ...........			    2019-11-11			    1.5				....					'2'
 	....
 
 7.3、创建一个学生表？

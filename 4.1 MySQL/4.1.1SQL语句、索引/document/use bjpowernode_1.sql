@@ -11,12 +11,12 @@ use bjpowernode;
 -- show tables;
 /*********************************************************************/
 /* 3.查看表(这种形式不推荐)*/
-/* select *
- from EMP;
- select *
- from salgrade;
- select *
- from dept; */
+select *
+from EMP;
+select *
+from salgrade;
+select *
+from dept;
 /*********************************************************************/
 /*4.查看表结构 desc salgrade;*/
 /*********************************************************************/
@@ -196,11 +196,14 @@ use bjpowernode;
 /* 10.12 select后面可以跟某个表的字段名（可以等同看做变量名），也可以跟字面量/字面值（数据）。 */
 -- select 'abc' as bieming
 -- from emp;
-/* 10.13 rand() 生成随机数
- 100 以内的随机数 */
+/* 
+ 10.13 rand() 生成随机数
+ 100 以内的随机数 
+ */
 -- select round(rand() * 100, 0)
 -- from emp;
-/* 10.14 ifnull 可以将 null 转换成一个具体值 
+/* 
+ 10.14 ifnull 可以将 null 转换成一个具体值 
  ifnull 是空处理函数，专门处理空的 。  
  注意 ： NULL 只要参与运算 ， 
  最终结果一定是NULL 。 
@@ -209,25 +212,33 @@ use bjpowernode;
  ifnull 函数用法 ： ifnull(数据, 被当做哪个值) 
  如果 “ 数据 ” 为NULL的时候 ， 
  把这个数据结构当做哪个值 。 */
-/*select ename,
+/*
+ select ename,
  (sal + comm) * 12 as yearsal
- from emp;*/
-/*select ename,
+ from emp;
+ */
+/*
+ select ename,
  (sal + ifnull(comm, 0)) * 12 as yearsal
- from emp;*/
+ from emp;
+ */
 /**********************************************************/
 /* 11.分组函数（多行处理函数） */
 /* 多行处理函数的特点：输入多行，最终输出一行。 */
-/* 5个：
+/* 
+ 5个：
  count	计数
  sum	求和
  avg	平均值
  max	最大值
- min	最小值 */
+ min	最小值 
+ */
 /* 注意：
  分组函数在使用的时候必须先进行分组，然后才能用。
- 如果你没有对数据进行分组，整张表默认为一组。 */
-/* select max(sal)
+ 如果你没有对数据进行分组，整张表默认为一组。 
+ */
+/* 
+ select max(sal)
  from emp;
  select min(sal)
  from emp;
@@ -236,17 +247,22 @@ use bjpowernode;
  select avg(sal)
  from emp;
  select count(sal)
- from emp;*/
-/* 分组函数在使用的时候需要注意哪些 ？  
+ from emp;
+ */
+/* 
+ 分组函数在使用的时候需要注意哪些 ？  
  第一点 ： 分组函数自动忽略NULL ， 你不需要提前对NULL进行处理 。
  第二点 ： 分组函数中count(*) 和count(具体字段) 有什么区别 ？ 
  第三点：分组函数不能够直接使用在where子句中。
- 第四点 ： 所有的分组函数可以组合起来一起用 。*/
+ 第四点 ： 所有的分组函数可以组合起来一起用 。
+ */
 /*******************************************************************/
 /* 12.分组查询（非常重要：五颗星*****） */
 /*
  12.1找出每个工作岗位的工资和？
  实现思路：按照工作岗位分组，然后对工资求和。
+ */
+/*
  select 
  job,sum(sal)
  from
@@ -259,7 +275,8 @@ use bjpowernode;
  max(sal)
  from emp
  group by deptno
- having max(sal) > 3000;*/
+ having max(sal) > 3000;
+ */
 /*
  select deptno,
  max(sal)
@@ -301,10 +318,13 @@ use bjpowernode;
 /*
  找出每个岗位的平均薪资，要求显示平均薪资大于1500的，除MANAGER岗位之外，
  要求按照平均薪资降序排。*/
-select job,
-    avg(sal) as avgsal
-from emp
-where job <> 'MANAGER'
-group by job
-having avg(sal) > 1500
-order by avgsal desc;
+/*
+ select job,
+ avg(sal) as avgsal
+ from emp
+ where job <> 'MANAGER'
+ group by job
+ having avg(sal) > 1500
+ order by avgsal desc;
+ */
+/***************************************************************************/
