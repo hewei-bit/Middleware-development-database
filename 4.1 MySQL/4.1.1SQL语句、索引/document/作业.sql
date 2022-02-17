@@ -3,7 +3,7 @@ use bjpowernode;
 /* 第一步：取得每个部门最高薪水(按照部门编号分组，找出每一组最大值) */
 select deptno,
     max(sal) as maxsal
-from emp
+from EMP
 group by deptno;
 /* 2、哪些人的薪水在部门的平均薪水之上 */
 /* 3、取得部门中（所有人的）平均的薪水等级 */
