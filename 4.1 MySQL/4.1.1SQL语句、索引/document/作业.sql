@@ -2,50 +2,48 @@ use bjpowernode;
 -- select *
 -- from EMP;
 -- select *
--- from salgrade;
+-- from SALGRADE;
 -- select *
--- from dept;
+-- from DEPT;
 /* ************************************************************************* */
 /* 1 取得每个部门最高薪水的人员名称 */
 /* 第一步：取得每个部门最高薪水(按照部门编号分组，找出每一组最大值) */
-<< << << < HEAD
-select deptno,
-    max(sal) as maxsal
-from EMP
-group by deptno;
+-- select DEPTNO,
+--     max(SAL) as maxsal
+-- from EMP
+-- group by DEPTNO;
 /* 第二步：将以上的查询结果当做一张临时表t，
- t和emp表连接，条件：t.deptno = e.deptno and t.maxsal = e.sal */
-/* select e.ename,
- t.*
- from emp e
- join (
- select deptno,
- max(sal) as maxsal
- from emp
- group by deptno
- ) t on t.deptno = e.deptno
- AND t.maxsal = e.sal; */
+ t和EMP表连接，条件：t.DEPTNO = e.DEPTNO and t.maxsal = e.SAL */
+-- select e.ENAME,
+--     t.*
+-- from EMP e
+--     join (
+--         select DEPTNO,
+--             max(SAL) as maxsal
+--         from EMP
+--         group by DEPTNO
+--     ) t on t.DEPTNO = e.DEPTNO
+--     AND t.maxsal = e.SAL;
 /* ************************************************************************* */
->> >> >> > 90ce2a84cdd0ec0453a63c0c98e86ece19939616
 /* 2、哪些人的薪水在部门的平均薪水之上 */
 /* 第一步先查出每个部门的平均薪水 */
-/* select deptno,
- avg(sal) as avgsal
- from emp
- group by deptno; */
-/* 第二步：将以上查询结果当做t表，t和emp表连接
- 条件：部门编号相同，并且emp的sal大于t表的avgsal */
+-- select DEPTNO,
+--     avg(SAL) as avgsal
+-- from EMP
+-- group by DEPTNO;
+/* 第二步：将以上查询结果当做t表，t和EMP表连接
+ 条件：部门编号相同，并且EMP的sal大于t表的avgsal */
 select t.*,
-    e.ename,
-    e.sal
-from emp e
+    e.ENAME,
+    e.SAL
+from EMP e
     join (
-        select deptno,
-            avg(sal) as avgsal
-        from emp
-        group by deptno
-    ) t on e.deptno = t.deptno
-    and e.sal > t.avgsal;
+        select DEPTNO,
+            avg(SAL) as avgsal
+        from EMP
+        group by DEPTNO
+    ) t on e.DEPTNO = t.DEPTNO
+    and e.SAL > t.avgsal;
 /* ************************************************************************* */
 /* 3、取得部门中（所有人的）平均的薪水等级 */
 /* ************************************************************************* */
