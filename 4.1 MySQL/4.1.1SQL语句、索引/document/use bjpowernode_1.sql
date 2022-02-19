@@ -4,6 +4,7 @@
  source C: \ Users \ HEWEI \ Desktop \ document \ t_student.sql; */
 /*********************************************************************/
 /* 1.使用数据库  */
+-- show databases;
 use bjpowernode;
 /*use t_student;*/
 /*********************************************************************/
