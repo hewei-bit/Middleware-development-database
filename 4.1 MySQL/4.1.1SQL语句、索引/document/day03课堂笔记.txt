@@ -478,11 +478,11 @@ ALLEN				OPERATIONS
 		1					jack				100
 		2					lucy				100
 		3					lilei				100
-		4					hanmeimei		100
+		4					hanmeimei		    100
 		5					zhangsan			101
 		6					lisi				101
-		7					wangwu			101
-		8					zhaoliu			101
+		7					wangwu			    101
+		8					zhaoliu			    101
 
 		当cno字段没有任何约束的时候，可能会导致数据无效。可能出现一个102，但是102班级不存在。
 		所以为了保证cno字段中的值都是100和101，需要给cno字段添加外键约束。
