@@ -1,0 +1,12 @@
+/*.o
+/*.so
+/*.dylib
+/*.a
+/*.pc
+*.dSYM
+tags
+/*.m4
+/*.lo
+/*.in
+/*.la
+/*.am
